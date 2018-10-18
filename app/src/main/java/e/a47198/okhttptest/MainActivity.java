@@ -30,12 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             downloadBinder = (DownloadService.DownloadBinder) service;
-
         }
-
         @Override
         public void onServiceDisconnected(ComponentName name) {
-
         }
     };
 
@@ -95,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        要记得解绑，不然可能会造成内存溢出
         unbindService(connection);
     }
 }
